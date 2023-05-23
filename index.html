@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nav-bar</title>
+    <link rel="stylesheet" href="gradientBox.css">
+</head>
+<body>
+    <div class="body"></div>
+        <div class="gradient-container">
+            <div class="gradient-box"></div>
+            <div class="wrap">
+                <div class="input-box">
+                    <input type="text" id="text" placeholder="color1, color2, color3, color4...">
+                </div>
+                <div class="bottom">
+                    <div><input type="number" id="number" placeholder="angle"> <span style="color:rgb(231, 220, 252)">degree</span></div>
+                    <input type="submit" id="submit">
+                </div>
+            </div>
+           
+        </div>
+        <script>
+            let btn = document.querySelector("#submit");
+           btn.onclick=()=>{
+                let clr = document.querySelector("#text");
+                let deg = document.querySelector("#number");
+                let gradientBox = document.querySelector(".gradient-box");
+                let body = document.querySelector(".body");
+                if (clr.value == "") {
+                    alert("Please fill color");
+                }else if(deg.value == ""){
+                    alert("Please fill angle")
+                }
+                else{
+                    gradientBox.style.background = `linear-gradient(${deg.value}deg, ${clr.value})`;
+                    body.style.background = `linear-gradient(${deg.value}deg, ${clr.value})`;
+                }
+            }
+        </script>
+</body>
+</html>
